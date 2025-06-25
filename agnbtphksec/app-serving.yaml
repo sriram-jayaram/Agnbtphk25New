@@ -6,9 +6,7 @@ metadata:
     scenarios.ai.sap.com/name: genai-chatbot-scenario
     scenarios.ai.sap.com/description: GenAI chatbot for PR creation
 spec:
-  template:
-    spec:
-      imagePullSecrets:
+  imagePullSecrets:
     - name: dockercred
   entrypoint: pr-workflow
   templates:
@@ -17,8 +15,8 @@ spec:
     - - name: pr-workmodel
         template: mycodeblock1
   - name: mycodeblock1
-      containers:
-        - name: chatbot
-          image: docker.io/227102/agnbtphk25img:01
-          ports:
-            - containerPort: 8080
+    container:
+      image: docker.io/227102/agnbtphk25img:01
+      command: ["/bin/sh", "-c"]
+      args: 
+      - "python /app/src/main.py"

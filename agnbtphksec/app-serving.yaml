@@ -8,6 +8,15 @@ metadata:
 spec:
   template:
     spec:
+      imagePullSecrets:
+    - name: dockercred
+  entrypoint: pr-workflow
+  templates:
+  - name: pr-workflow
+    steps:
+    - - name: pr-workmodel
+        template: mycodeblock1
+  - name: mycodeblock1
       containers:
         - name: chatbot
           image: docker.io/227102/agnbtphk25img:01

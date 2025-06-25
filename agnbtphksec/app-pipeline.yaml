@@ -1,4 +1,4 @@
-apiVersion: ai.sap.com/v1alpha1
+apiVersion: argoproj.io/v1alpha1
 kind: ServingDeployment
 metadata:
   name: langchain-chatbot-pipeline
@@ -9,7 +9,7 @@ metadata:
     executables.ai.sap.com/name: "PR Registration"
   labels:
     scenarios.ai.sap.com/id: "purchase-request"
-    ai.sap.com/version: "4.0"
+    ai.sap.com/version: "5.0"
 spec:
   imagePullSecrets:
     - name: dockercred

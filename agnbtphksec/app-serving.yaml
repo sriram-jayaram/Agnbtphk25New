@@ -1,0 +1,15 @@
+apiVersion: ai.sap.com/v1alpha1
+kind: ServingDeployment
+metadata:
+  name: genai-chatbot-serving
+  annotations:
+    scenarios.ai.sap.com/name: genai-chatbot-scenario
+    scenarios.ai.sap.com/description: GenAI chatbot for PR creation
+spec:
+  template:
+    spec:
+      containers:
+        - name: chatbot
+          image: docker.io/227102/agnbtphk25img:01
+          ports:
+            - containerPort: 8080

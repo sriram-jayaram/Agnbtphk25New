@@ -9,7 +9,7 @@ metadata:
     executables.ai.sap.com/name: "PR Registration"
   labels:
     scenarios.ai.sap.com/id: "purchase-request"
-    ai.sap.com/version: "3.0"
+    ai.sap.com/version: "4.0"
 spec:
   imagePullSecrets:
     - name: dockercred
